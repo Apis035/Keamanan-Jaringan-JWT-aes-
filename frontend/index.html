@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>SecureVault</title>
+    <script>
+        window.location.replace(
+            localStorage.getItem("access_token")
+                ? "pages/dashboard.html"
+                : "pages/login.html"
+        );
+    </script>
+</head>
+<body></body>
+</html>

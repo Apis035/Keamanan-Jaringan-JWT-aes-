@@ -10,9 +10,11 @@ async function apiRequest(url, options = {}) {
             errorData = await response.json();
         }
 
-        throw new Error(
+        const error = new Error(
             errorData.message || errorData.msg || "Terjadi kesalahan pada server."
         );
+        error.status = response.status;
+        throw error;
     }
 
     if (contentType && contentType.includes("application/json")) {
@@ -20,4 +22,38 @@ async function apiRequest(url, options = {}) {
     }
 
     return response;
+}
+
+function getToken() {
+    return localStorage.getItem("access_token");
+}
+
+function logout() {
+    localStorage.removeItem("access_token");
+    window.location.href = "login.html";
+}
+
+// Request dengan header Authorization. Jika token kedaluwarsa/tidak valid
+// (401 atau 422 dari flask-jwt-extended), pengguna otomatis di-logout.
+async function authRequest(url, options = {}) {
+    const token = getToken();
+
+    if (!token) {
+        logout();
+        throw new Error("Sesi berakhir. Silakan login kembali.");
+    }
+
+    options.headers = {
+        ...(options.headers || {}),
+        Authorization: `Bearer ${token}`
+    };
+
+    try {
+        return await apiRequest(url, options);
+    } catch (error) {
+        if (error.status === 401 || error.status === 422) {
+            logout();
+        }
+        throw error;
+    }
 }

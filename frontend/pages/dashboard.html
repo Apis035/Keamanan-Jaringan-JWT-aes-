@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | SecureVault</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="logo">🔐 SecureVault</div>
+        <div class="user-box">
+            <div class="user-info">
+                <div id="userName">...</div>
+                <div id="userEmail"></div>
+            </div>
+            <button type="button" id="logoutButton" class="btn">Logout</button>
+        </div>
+    </header>
+
+    <main class="dashboard">
+
+        <section class="stats">
+            <div class="stat-card">
+                <span>Jumlah File</span>
+                <strong id="fileCount">0</strong>
+            </div>
+            <div class="stat-card">
+                <span>Total Ukuran</span>
+                <strong id="totalSize">0 B</strong>
+            </div>
+        </section>
+
+        <div id="message" class="message"></div>
+
+        <section class="panel">
+            <h2>Unggah File</h2>
+
+            <label for="fileInput" id="dropZone" class="drop-zone">
+                <span class="icon">📁</span>
+                Klik atau seret file ke sini
+                <small>Maksimal 100 MB • dienkripsi AES-256-GCM sebelum disimpan</small>
+                <input type="file" id="fileInput">
+            </label>
+
+            <div id="progressWrap" class="progress-wrap">
+                <div class="progress"><div id="progressBar"></div></div>
+                <div id="progressText"></div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>File Saya</h2>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama File</th>
+                            <th>Ukuran</th>
+                            <th>Diunggah</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="fileList"></tbody>
+                </table>
+            </div>
+
+            <div id="emptyState" class="empty-state">
+                Belum ada file. Unggah file pertamamu di atas.
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/files.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+
+</body>
+</html>

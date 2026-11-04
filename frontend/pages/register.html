@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar | SecureVault</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/auth.css">
+</head>
+<body>
+
+    <main class="auth-container">
+        <section class="auth-card">
+
+            <div class="brand">
+                <div class="brand-icon">🔐</div>
+                <h1>SecureVault</h1>
+                <p>Personal File Storage</p>
+            </div>
+
+            <div class="auth-heading">
+                <h2>Buat Akun</h2>
+                <p>Daftar untuk mulai menyimpan file secara terenkripsi.</p>
+            </div>
+
+            <form id="registerForm">
+
+                <div class="form-group">
+                    <label for="name">Nama</label>
+                    <input type="text" id="name" placeholder="Masukkan nama" maxlength="100" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Masukkan email" maxlength="150" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Minimal 8 karakter" minlength="8" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Konfirmasi Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Ulangi password" required>
+                </div>
+
+                <div id="message" class="message"></div>
+
+                <button type="submit" id="registerButton" class="auth-button">
+                    Daftar
+                </button>
+
+            </form>
+
+            <p class="auth-footer">
+                Sudah punya akun?
+                <a href="login.html">Login</a>
+            </p>
+
+            <div class="security-note">
+                🔒 Password disimpan dengan hash Argon2id
+            </div>
+
+        </section>
+    </main>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/auth.js"></script>
+
+</body>
+</html>
