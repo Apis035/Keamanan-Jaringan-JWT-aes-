@@ -1,0 +1,145 @@
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background:
+        radial-gradient(circle at top left, #172554, transparent 40%),
+        #0b1120;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 430px;
+    padding: 38px;
+    background: #111c30;
+    border: 1px solid #263650;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.brand {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.brand-icon {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.brand h1 {
+    color: #ffffff;
+    font-size: 27px;
+}
+
+.brand p {
+    color: #94a3b8;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+.auth-heading {
+    margin-bottom: 25px;
+}
+
+.auth-heading h2 {
+    color: #ffffff;
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.auth-heading p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.form-group {
+    margin-bottom: 19px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 14px;
+    color: #cbd5e1;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #334155;
+    border-radius: 9px;
+    background: #0b1120;
+    color: white;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.auth-button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 9px;
+    background: #2563eb;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.auth-button:hover {
+    background: #1d4ed8;
+}
+
+.auth-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.auth-footer {
+    margin-top: 24px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.security-note {
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid #263650;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.message {
+    display: none;
+    margin-bottom: 16px;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.message.error {
+    display: block;
+    background: #451a1a;
+    color: #fecaca;
+}
+
+.message.success {
+    display: block;
+    background: #143b2a;
+    color: #bbf7d0;
+}
+
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 27px 22px;
+    }
+}

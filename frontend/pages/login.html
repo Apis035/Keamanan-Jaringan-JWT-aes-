@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | SecureVault</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/auth.css">
+</head>
+<body>
+
+    <main class="auth-container">
+        <section class="auth-card">
+
+            <div class="brand">
+                <div class="brand-icon">🔐</div>
+                <h1>SecureVault</h1>
+                <p>Personal File Storage</p>
+            </div>
+
+            <div class="auth-heading">
+                <h2>Selamat Datang</h2>
+                <p>Login untuk mengakses file pribadimu.</p>
+            </div>
+
+            <form id="loginForm">
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Masukkan email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Masukkan password"
+                        required
+                    >
+                </div>
+
+                <div id="message" class="message"></div>
+
+                <button type="submit" id="loginButton" class="auth-button">
+                    Login
+                </button>
+
+            </form>
+
+            <p class="auth-footer">
+                Belum punya akun?
+                <a href="register.html">Daftar sekarang</a>
+            </p>
+
+            <div class="security-note">
+                🔒 File pribadi terlindungi dengan enkripsi AES-256-GCM
+            </div>
+
+        </section>
+    </main>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/auth.js"></script>
+
+</body>
+</html>
