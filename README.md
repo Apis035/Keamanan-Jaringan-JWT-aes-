@@ -4,6 +4,8 @@ HTML + CSS + JavaScript murni (tanpa build tool).
 
 ## Menjalankan
 
+### Frontend
+
 CORS di backend hanya mengizinkan origin `http://localhost:5173`, jadi sajikan frontend di port itu:
 
 ```bash
@@ -12,7 +14,16 @@ python -m http.server 5173
 ```
 
 Buka http://localhost:5173 (pakai `localhost`, bukan `127.0.0.1`, supaya cocok dengan CORS).
-Backend: `cd backend && python run.py` (port 5000).
+
+### Backend
+
+Install depedensi yang dipakai SecureVault, lalu jalankan backend.
+
+```bash
+pip install -r requirements.txt
+cd backend
+python run.py
+```
 
 ## Struktur
 
